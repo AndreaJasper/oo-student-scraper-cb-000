@@ -18,7 +18,7 @@ class Scraper
         :profile_url => student.css(".student-card a").text
       }
     end
-      profile_url
+      index_url
 
   end
 
