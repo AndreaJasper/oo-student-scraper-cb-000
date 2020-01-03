@@ -36,8 +36,6 @@ class Scraper
       :bio =>
     }
     end
-    profile_url
+    Scraper.scrape_profile_page(profile_url)
   end
 end
-
-scrape_index_page
