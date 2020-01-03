@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 
 
-# require_relative './student.rb'
+require_relative './student.rb'
 
 class Scraper
 
