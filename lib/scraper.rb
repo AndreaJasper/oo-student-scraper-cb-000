@@ -41,4 +41,4 @@ class Scraper
   end
 end
 
-self.scrape_index_page
+self.scrape_index_page(index_url)
