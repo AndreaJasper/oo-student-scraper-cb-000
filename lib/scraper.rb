@@ -11,9 +11,11 @@ class Scraper
 
       binding.pry
 
+      students = {}
+
       #kickstarter.css("li.project.grid_4").each do |student|
-      #title = student.css("h2.bbcard_name strong a").text
-      #student[title.to_sym] = {
+      #name = student.css("h2.bbcard_name strong a").text
+      #students[name.to_sym] = {
       #  :name => student.css("div.project-thumbnail a img").attribute("src").value,
       #  :location => student.css("p.bbcard_blurb").text,
       #  :profile_url => student.css("span.location-name").text
