@@ -9,8 +9,6 @@ class Scraper
   def self.scrape_index_page(index_url)
       Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/"))
 
-      binding.pry
-
       students = {}
 
       doc.css("li.project.grid_4").each do |student|
