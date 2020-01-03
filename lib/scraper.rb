@@ -27,12 +27,12 @@ class Scraper
 
     doc.css("div.vitals-container").each do |student|
       student = {
-      :twitter => student.css("div.project-thumbnail a img").attribute("src").value,
+      :twitter => student.css("div.social-icon-container a").text,s
       :linkedin => student.css("p.bbcard_blurb").text,
       :github => student.css("span.location-name").text,
-      :blog =>
-      :profile_quote =>
-      :bio =>
+      :blog => student.css(""),
+      :profile_quote => student.css("div.profile_quote").text,
+      :bio => student.css("")
     }
     end
     Scraper.scrape_profile_page(profile_url)
