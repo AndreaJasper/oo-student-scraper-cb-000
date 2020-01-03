@@ -25,9 +25,8 @@ class Scraper
   def self.scrape_profile_page(profile_url)
     profile_url = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/"))
 
-    doc.css("li.project.grid_4").each do |student|
-    title = student.css("h2.bbcard_name strong a").text
-    student[title.to_sym] = {
+    doc.css("div.vitals-container").each do |student|
+      student = {
       :twitter => student.css("div.project-thumbnail a img").attribute("src").value,
       :linkedin => student.css("p.bbcard_blurb").text,
       :github => student.css("span.location-name").text,
