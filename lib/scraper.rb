@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-require_relative './student.rb'
+# require_relative './student.rb'
 
 class Scraper
 
@@ -40,3 +40,5 @@ class Scraper
   #  profile_url
   end
 end
+
+self.scrape_index_page
