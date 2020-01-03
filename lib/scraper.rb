@@ -13,14 +13,14 @@ class Scraper
 
       students = {}
 
-      #kickstarter.css("li.project.grid_4").each do |student|
-      #name = student.css(".student-cart.card-text-container h4.student-name").text
-      #students[name.to_sym] = {
-      #  :location => student.css(".student-cart.card-text-container p.student-location").text,
-      #  :profile_url => student.css(".student-card a").text
-      #}
-    #end
-    #  profile_url
+      kickstarter.css("li.project.grid_4").each do |student|
+      name = student.css(".student-cart.card-text-container h4.student-name").text
+      students[name.to_sym] = {
+        :location => student.css(".student-cart.card-text-container p.student-location").text,
+        :profile_url => student.css(".student-card a").text
+      }
+    end
+      profile_url
 
   end
 
