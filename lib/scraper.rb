@@ -7,7 +7,7 @@ require 'open-uri'
 class Scraper
 
   def self.scrape_index_page(index_url)
-      Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/"))
+      index_url = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/"))
 
       students = {}
 
@@ -23,20 +23,20 @@ class Scraper
   end
 
   def self.scrape_profile_page(profile_url)
-  #  Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/"))
+    profile_url = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/"))
 
-  #  doc.css("li.project.grid_4").each do |student|
-  #  title = student.css("h2.bbcard_name strong a").text
-  #  student[title.to_sym] = {
-  #    :twitter => student.css("div.project-thumbnail a img").attribute("src").value,
-  #    :linkedin => student.css("p.bbcard_blurb").text,
-  #    :github => student.css("span.location-name").text,
-  #    :blog =>
-  #    :profile_quote =>
-  #    :bio =>
-  #  }
-  #  end
-  #  profile_url
+    doc.css("li.project.grid_4").each do |student|
+    title = student.css("h2.bbcard_name strong a").text
+    student[title.to_sym] = {
+      :twitter => student.css("div.project-thumbnail a img").attribute("src").value,
+      :linkedin => student.css("p.bbcard_blurb").text,
+      :github => student.css("span.location-name").text,
+      :blog =>
+      :profile_quote =>
+      :bio =>
+    }
+    end
+    profile_url
   end
 end
 
