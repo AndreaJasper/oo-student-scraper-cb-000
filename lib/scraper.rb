@@ -10,8 +10,8 @@ class Scraper
 
       index_page.css("li.project.grid_4").each do |card|
         card.css(".student-cart a").each do |student|
-          student_name => student.css(".student-name").text,
-          student_location => student.css(".student-location").text,
+          student_name = student.css(".student-name").text,
+          student_location = student.css(".student-location").text,
           student_profile_link = "#{student.attr('href')}",
           students << {name: student_name, location: student_location, profile_url: student_profile_link
       }
