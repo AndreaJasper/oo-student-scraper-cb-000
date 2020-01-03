@@ -13,11 +13,14 @@ class Scraper
 
       index_page.css("li.project.grid_4").each do |card|
         card.css(".student-cart a").each do |student|
-          :name => student.css(".student-name").text,
-          :location => student.css(".student-cart.card-text-container p.student-location").text,
-          :profile_url => student.css(".student-card a").text
+          student_name => student.css(".student-name").text,
+          student_location => student.css(".student-location").text,
+          student_profile_link = "#{student.attr('href')}",
+          students << {name: student_name, location: student_location, profile_url: student_profile_link}
       }
     end
+    end
+    students
   end
 
   def self.scrape_profile_page(profile_url)
