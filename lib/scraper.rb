@@ -7,15 +7,15 @@ require 'open-uri'
 class Scraper
 
   def self.scrape_index_page(index_url)
-      index_url = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/"))
+      index_page = Nokogiri::HTML(open("https://learn-co-curriculum.github.io/student-scraper-test-page/"))
 
-      students = {}
+      students = []
 
-      scraped_students.css("li.project.grid_4").each do |student|
-      name = student.css(".student-cart.card-text-container h4.student-name").text
-      students[name.to_sym] = {
-        :location => student.css(".student-cart.card-text-container p.student-location").text,
-        :profile_url => student.css(".student-card a").text
+      index_page.css("li.project.grid_4").each do |card|
+        card.css(".student-cart a").each do |student|
+          :name => student.css(".student-name").text,
+          :location => student.css(".student-cart.card-text-container p.student-location").text,
+          :profile_url => student.css(".student-card a").text
       }
     end
   end
