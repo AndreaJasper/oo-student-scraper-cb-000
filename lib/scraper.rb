@@ -14,11 +14,10 @@ class Scraper
       students = {}
 
       #kickstarter.css("li.project.grid_4").each do |student|
-      #name = student.css(".student-cart.card-text-container h4").text
+      #name = student.css(".student-cart.card-text-container h4.student-name").text
       #students[name.to_sym] = {
-      #  :name => student.css("div.project-thumbnail a img").attribute("src").value,
-      #  :location => student.css("p.bbcard_blurb").text,
-      #  :profile_url => student.css("span.location-name").text
+      #  :location => student.css(".student-cart.card-text-container p.student-location").text,
+      #  :profile_url => student.css(".student-card a").text
       #}
     #end
     #  profile_url
