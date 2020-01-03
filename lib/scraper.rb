@@ -11,7 +11,7 @@ class Scraper
 
       students = {}
 
-      doc.css("li.project.grid_4").each do |student|
+      scraped_students.css("li.project.grid_4").each do |student|
       name = student.css(".student-cart.card-text-container h4.student-name").text
       students[name.to_sym] = {
         :location => student.css(".student-cart.card-text-container p.student-location").text,
