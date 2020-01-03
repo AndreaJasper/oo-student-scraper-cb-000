@@ -27,7 +27,7 @@ class Scraper
 
     doc.css("div.vitals-container").each do |student|
       student = {
-      :twitter => student.css("div.social-icon-container a").text,s
+      :twitter => student.css("div.social-icon-container a").text,
       :linkedin => student.css("p.bbcard_blurb").text,
       :github => student.css("span.location-name").text,
       :blog => student.css(""),
